@@ -14,7 +14,6 @@ func InitDB() error {
 	if err != nil {
 		panic(err)
 	}
-	defer db.Close()
 
 	// Check if the connection is OK
 	if err := db.Ping(); err != nil {

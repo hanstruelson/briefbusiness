@@ -41,8 +41,10 @@
 
 <script setup>
 import { reactive, computed, defineEmits } from 'vue';
+import { useRouter } from 'vue-router';
 
 const emit = defineEmits(['userRegistered']);
+const router = useRouter();
 
 const d = reactive({
   formData: {
@@ -91,6 +93,7 @@ const handleSubmit = async () => {
     localStorage.setItem('UserId', registerData.UserId);
 
     emit('userRegistered', registerData);
+    router.push('/');
     
     d.formData.Email = '';
     d.errorMessage = '';

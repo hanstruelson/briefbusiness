@@ -1,0 +1,1 @@
+npx concurrently "npx sass -w src/style.scss build/style.css" "bun build --watch src/main.ts --outdir build/" "cd build && npx vite --host 127.0.0.1 --port 3000" "npx chokidar-cli \"src/index.html\" -c \"cp src/index.html build/index.html\" -i"
